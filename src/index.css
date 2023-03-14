@@ -470,6 +470,8 @@ input:checked+.slider:before {
     justify-content: center;
   }
 
+  /* test */
+
   .form-contents {
     padding: 0 30px;
   }
