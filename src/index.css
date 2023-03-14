@@ -1,0 +1,497 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+  background: rgb(237, 245, 255);
+  padding: 20px;
+}
+
+.heading-text--container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 40px;
+  color: rgb(4 36 92);
+}
+
+.heading-text--container p,
+.personal-info--container::placeholder {
+  color: rgb(174 175 180)
+}
+
+/*************************** User Form ***************************/
+.userform {
+  display: flex;
+  justify-content: space-between;
+  width: 1050px;
+  border-radius: 10px;
+  background: white;
+  margin: 70px auto;
+}
+
+.sidebar {
+  display: flex;
+  height: 560px;
+  width: 300px;
+  border-radius: 10px;
+  margin: 20px 0;
+  margin-left: 20px;
+  background: rgb(97 0 255);
+}
+
+.form--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 20px 0;
+  margin-right: 130px;
+  width: 500px;
+}
+
+.form-contents {
+  margin: 0 auto;
+  width: 100%;
+  height: 400px;
+}
+
+.navButtons--container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.navButtons,
+.confirm-button {
+  border: none;
+  border-radius: 5px;
+  background: rgb(4 36 92);
+  color: white;
+  width: 110px;
+  height: 40px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.navButtons:hover {
+  background: rgb(20 68 141);
+  transition: .1s;
+}
+
+.confirm-button {
+  background: rgb(123 0 255);
+}
+
+.confirm-button:hover {
+  background: rgb(157 124 255);
+  transition: .1s;
+}
+
+/*************************** Side bar ***************************/
+
+.sidebar-content--container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+  margin: 36px;
+}
+
+.step--container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.step-number {
+  border: 1px solid white;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+
+.step-text {
+  display: flex;
+  font-size: 14px;
+  flex-direction: column;
+  color: white;
+}
+
+.step-text span+span {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/*************************** Personal Info ***************************/
+.personal-info--container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.personal-info--input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.personal-info--input-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.personal-info--input input {
+  color: rgb(4 36 92);
+  font-weight: 500;
+  font-size: 14px;
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid rgb(221 219 223);
+  text-indent: 8px;
+  margin-bottom: 12px;
+}
+
+.personal-info--input input:focus {
+  outline: none !important;
+  border: 1px solid rgb(90 66 151);
+}
+
+.personal-info--input input:-webkit-autofill {
+  box-shadow: 0 0 0 30px white inset !important;
+  -webkit-text-fill-color: rgb(4 36 92);
+}
+
+.personal-info--input label {
+  color: rgb(4 36 92);
+}
+
+.required-error-msg {
+  font-weight: 500;
+  font-size: 12px;
+  color: rgb(234, 10, 74);
+}
+
+/*************************** Select Plan ***************************/
+.select-plan--container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.plans--container {
+  margin-top: 18px;
+  display: flex;
+  gap: 40px;
+}
+
+.plan {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgb(221 219 223);
+  border-radius: 5px;
+  padding: 14px;
+  height: 160px;
+  width: 160px;
+  cursor: pointer;
+}
+
+.plan-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.plan h2 {
+  color: rgb(4 36 92);
+  font-size: 16px;
+}
+
+.plan span {
+  color: rgb(174 175 180);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.select-plan--radio {
+  appearance: none;
+}
+
+.payment-interval--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: rgb(248 249 254);
+  border-radius: 5px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(4 36 92);
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(4 36 92);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  transform: translateX(18px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 32px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*************************** Add Ons ***************************/
+.add-ons--container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.add-on {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(4 36 92);
+  border-radius: 5px;
+  height: 68px;
+  gap: 30px;
+}
+
+.add-on input {
+  cursor: pointer;
+  accent-color: rgb(123 0 255);
+}
+
+.add-on-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.add-on span {
+  display: inline-block;
+  flex-grow: 1;
+  text-align: right;
+  padding-right: 30px;
+  font-size: 14px;
+  color: rgb(123 0 255);
+}
+
+.add-on input {
+  margin-left: 30px;
+  height: 18px;
+  width: 18px;
+}
+
+.add-on h2 {
+  color: rgb(4 36 92);
+  font-size: 16px;
+}
+
+.add-on p {
+  color: rgb(174 175 180);
+  font-size: 12px;
+}
+
+/*************************** Finishing Up ***************************/
+.finishing-up--container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.confirm-choices--container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 4px;
+}
+
+.final-choices {
+  border-radius: 5px;
+  background: rgb(248 249 254);
+  padding: 28px;
+}
+
+.final-choices h2 {
+  color: rgb(9 28 94);
+  font-size: 16px;
+}
+
+.final-plan-choice {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.final-plan-choice a {
+  color: rgb(174 175 180);
+  font-size: 14px;
+  width: 50px;
+}
+
+.final-plan-choice a:hover {
+  color: rgb(123 0 255);
+  transition: .3s;
+}
+
+.final-choice1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: rgb(174, 175, 180, 0.4);
+  margin: 24px 0;
+}
+
+.final-addons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.final-addon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(174 175 180);
+  font-size: 14px;
+}
+
+.final-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px;
+}
+
+.final-total h3 {
+  color: rgb(174 175 180);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.final-total span {
+  color: rgb(123 0 255);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+/*************************** Thank You ***************************/
+
+.thankyou--container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thankyou-contents {
+  width: 96%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.thankyou--container p {
+  line-height: 1.4;
+  font-size: 16px;
+  color: rgb(174 175 180);
+}
+
+/*************************** MEDIA QUERIES ***************************/
+@media screen and (max-width: 1100px) {
+  .userform {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .form-contents {
+    padding: 0 30px;
+  }
+
+  .form--container {
+    margin-right: 0;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .plans--container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .plan {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+    height: auto;
+  }
+}
