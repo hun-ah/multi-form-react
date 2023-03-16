@@ -24,7 +24,7 @@ const Sidebar = ({ currentIndex }) => {
       }
    ]
 
-   const stepsList = steps.map(step => (
+   const stepsListDesktop = steps.map(step => (
       <Step
          key={step.stepNumber}
          number={step.stepNumber}
@@ -35,11 +35,12 @@ const Sidebar = ({ currentIndex }) => {
    ))
 
    return (
-      <>
-         {stepsList}
-      </>
+      <div className="sidebar">
+         <div className='sidebar-content--container'>
+            {stepsListDesktop}
+         </div>
+      </div>
    )
-
 }
 
 const selectedStep = {

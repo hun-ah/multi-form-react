@@ -6,7 +6,14 @@
 
 body {
   background: rgb(237, 245, 255);
-  padding: 20px;
+}
+
+.app--container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .heading-text--container {
@@ -22,48 +29,59 @@ body {
   color: rgb(174 175 180)
 }
 
+.adjust-sidebar-position {
+  position: relative;
+}
+
 /*************************** User Form ***************************/
 .userform {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  height: 600px;
   width: 1050px;
   border-radius: 10px;
   background: white;
-  margin: 70px auto;
+  margin: 0 auto;
+  margin-top: -60px;
 }
 
 .sidebar {
   display: flex;
   height: 560px;
-  width: 300px;
+  width: 274px;
   border-radius: 10px;
   margin: 20px 0;
   margin-left: 20px;
-  background: rgb(97 0 255);
+  background-image: url(/src/assets/bg-sidebar-desktop.svg);
+  background-repeat: no-repeat;
+  position: absolute;
+  bottom: 0;
 }
 
 .form--container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  margin: 20px 0;
-  margin-right: 130px;
   width: 500px;
+  margin: 0 126px;
 }
 
 .form-contents {
   margin: 0 auto;
   width: 100%;
-  height: 400px;
 }
 
 .navButtons--container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  margin: 0 auto;
-  margin-top: 20px;
+  margin-top: -100px;
+  gap: 300px;
+  z-index: 1;
+}
+
+.fix-buttons-mobile {
+  margin-top: -50px;
+  z-index: 1;
 }
 
 .navButtons,
@@ -92,13 +110,20 @@ body {
   transition: .1s;
 }
 
+.spacer-left {
+  width: 408px
+}
+
+.spacer-right {
+  width: 100px;
+}
+
 /*************************** Side bar ***************************/
 
 .sidebar-content--container {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  width: 100%;
   margin: 36px;
 }
 
@@ -187,7 +212,7 @@ body {
 .select-plan--container {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 }
 
 .plans--container {
@@ -301,17 +326,21 @@ input:checked+.slider:before {
 .add-ons--container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
+}
+
+.add-ons--container label:nth-of-type(1) {
+  margin-top: 20px;
 }
 
 .add-on {
   cursor: pointer;
   display: flex;
   align-items: center;
-  border: 1px solid rgb(4 36 92);
+  border: 1px solid rgb(174 175 180);
   border-radius: 5px;
   height: 68px;
-  gap: 30px;
+  gap: 20px;
 }
 
 .add-on input {
@@ -329,13 +358,13 @@ input:checked+.slider:before {
   display: inline-block;
   flex-grow: 1;
   text-align: right;
-  padding-right: 30px;
+  padding-right: 20px;
   font-size: 14px;
   color: rgb(123 0 255);
 }
 
 .add-on input {
-  margin-left: 30px;
+  margin-left: 20px;
   height: 18px;
   width: 18px;
 }
@@ -445,6 +474,7 @@ input:checked+.slider:before {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 170px 0;
 }
 
 .thankyou-contents {
@@ -465,27 +495,90 @@ input:checked+.slider:before {
 
 /*************************** MEDIA QUERIES ***************************/
 @media screen and (max-width: 1100px) {
-  .userform {
+  .app--container {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .adjust-sidebar-position {
     width: 100%;
+  }
+
+  .userform {
+    height: auto;
+    width: calc(100% - 40px);
+    padding: 10px 0;
+    padding-bottom: 30px;
+    margin: -50px auto;
+    margin-bottom: 110px;
     justify-content: center;
   }
 
-  /* test */
+  .heading-text--container {
+    padding-top: 14px;
+  }
+
+  .form--container {
+    margin: 0;
+  }
 
   .form-contents {
     padding: 0 30px;
   }
 
-  .form--container {
-    margin-right: 0;
+  .sidebar {
+    background-image: url(/src/assets/bg-sidebar-mobile.svg);
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    width: 100%;
+    border-radius: 0;
+    height: 172px;
+    position: static;
   }
 
-  .sidebar {
+  .sidebar-content--container {
+    flex-direction: row;
+    margin: 0 auto;
+    gap: 24px;
+  }
+
+  .step--container {
+    align-items: flex-start;
+    padding-top: 36px;
+  }
+
+  .step-text {
     display: none;
+  }
+
+  .navButtons--container {
+    position: absolute;
+    bottom: 0;
+    height: 75px;
+    width: 100%;
+    background: white;
+    padding: 0 20px;
+    gap: 0;
+  }
+
+  .fix-buttons-mobile {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .personal-info--container {
+    gap: 26px;
+  }
+
+  .personal-info--input input:nth-of-type(3) {
+    margin-bottom: 0;
   }
 
   .plans--container {
     flex-direction: column;
+    margin-top: 0;
     gap: 10px;
   }
 
@@ -495,5 +588,59 @@ input:checked+.slider:before {
     justify-content: flex-start;
     gap: 20px;
     height: auto;
+  }
+
+  .thankyou--container {
+    padding: 50px 0;
+  }
+
+  .spacer-left,
+  .spacer-right {
+    display: none;
+  }
+
+}
+
+@media screen and (max-width: 499px) {
+  .form-contents {
+    padding: 0 24px;
+  }
+
+  .plan {
+    padding: 10px;
+  }
+
+  .plan-text {
+    gap: 4px;
+  }
+
+  .add-on {
+    gap: 0
+  }
+
+  .add-on input {
+    margin: 0 16px;
+  }
+
+  .add-on-text {
+    gap: 2px;
+  }
+
+  .add-on span {
+    font-size: 12px;
+    padding-right: 14px;
+  }
+
+  .final-total {
+    padding-bottom: 0;
+  }
+
+  .final-choices {
+    padding: 28px 20px;
+  }
+
+  .final-total {
+    padding-left: 12px;
+    padding-right: 12px;
   }
 }
